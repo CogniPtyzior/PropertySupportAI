@@ -1,0 +1,56 @@
+@baseUrl = http://localhost:8001
+
+### Healthcheck
+GET {{baseUrl}}/health
+
+### Version
+GET {{baseUrl}}/version
+
+### Data health
+GET {{baseUrl}}/data-health
+
+### Demo examples
+GET {{baseUrl}}/demo/examples
+
+### Lookup
+POST {{baseUrl}}/ask
+Content-Type: application/json
+
+{
+  "message": "Who is the heating provider for Les Érables?"
+}
+
+### Incident analysis
+POST {{baseUrl}}/ask
+Content-Type: application/json
+
+{
+  "message": "Several residents have no heating at Les Érables. What should I do?"
+}
+
+### Ticket workflow
+POST {{baseUrl}}/ask
+Content-Type: application/json
+
+{
+  "message": "Add to the heating ticket that three more residents reported the outage."
+}
+
+### Communication
+POST {{baseUrl}}/ask
+Content-Type: application/json
+
+{
+  "message": "Prepare a resident message for tomorrow's heating intervention."
+}
+
+### Clarification
+POST {{baseUrl}}/ask
+Content-Type: application/json
+
+{
+  "message": "There is a problem in the building."
+}
+
+### Ticket events
+GET {{baseUrl}}/ticket-events

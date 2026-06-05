@@ -1,0 +1,41 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Install dependencies",
+      "type": "shell",
+      "command": ".\\scripts\\install.ps1",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run migrations",
+      "type": "shell",
+      "command": ".\\scripts\\migrate.ps1",
+      "problemMatcher": []
+    },
+    {
+      "label": "Seed database",
+      "type": "shell",
+      "command": ".\\scripts\\seed.ps1 -Reset",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run API",
+      "type": "shell",
+      "command": ".\\scripts\\dev.ps1",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run tests",
+      "type": "shell",
+      "command": ".\\scripts\\test.ps1",
+      "problemMatcher": []
+    },
+    {
+      "label": "Quality checks",
+      "type": "shell",
+      "command": ".\\scripts\\quality.ps1",
+      "problemMatcher": []
+    }
+  ]
+}

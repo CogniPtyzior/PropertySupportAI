@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PropertySupport AI User Guide</title>
+  <link rel="stylesheet" href="./assets/user-guide.css">
+  <script src="./assets/user-guide.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <h1>PropertySupport AI</h1>
+    <p>GenAI workflow assistant for property support teams.</p>
+  </header>
+  <main class="container">
+    <section class="card">
+      <h2>What it does</h2>
+      <p>
+        PropertySupport AI receives support requests, classifies them, retrieves context
+        from SQLite, runs a LangGraph workflow and returns a sourced JSON response.
+      </p>
+    </section>
+    <section class="card">
+      <h2>Workflow</h2>
+      <pre><code>FastAPI /ask
+  → classify_request
+  → extract_entities
+  → route_intent
+  → lookup | communication | ticket_workflow | incident_analysis | clarification
+  → validate_response</code></pre>
+    </section>
+    <section class="grid">
+      <article class="card"><h3>Lookup</h3><p>Answers factual questions from database context.</p></article>
+      <article class="card"><h3>Communication</h3><p>Drafts resident or provider messages.</p></article>
+      <article class="card"><h3>Ticket workflow</h3><p>Creates safe-mode ticket suggestions.</p></article>
+      <article class="card"><h3>Incident analysis</h3><p>Builds operational action plans.</p></article>
+    </section>
+    <section class="card warning">
+      <h2>Safe mode</h2>
+      <p>Tickets are read-only. AI suggestions are stored in ticket_events and require human validation.</p>
+    </section>
+    <section class="card">
+      <h2>Try it</h2>
+      <button data-copy="prompt1">Copy</button>
+      <pre id="prompt1"><code>Several residents have no heating at Les Érables. What should I do?</code></pre>
+    </section>
+  </main>
+</body>
+</html>
